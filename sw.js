@@ -1,5 +1,5 @@
 /* ASCON app shell service worker — caches only the shell (never ASCON data; the web app itself is always loaded live). */
-var CACHE = 'ascon-shell-v1';
+var CACHE = 'ascon-shell-v2';
 var SHELL = ['./', 'index.html', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png', 'apple-touch-icon.png', 'favicon-32.png'];
 self.addEventListener('install', function (e) { e.waitUntil(caches.open(CACHE).then(function (c) { return c.addAll(SHELL); }).then(function () { return self.skipWaiting(); })); });
 self.addEventListener('activate', function (e) {
